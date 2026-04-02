@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cadastro, TipoTransacao } from '../models/cadastro';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,5 +13,23 @@ export class CadastroPage implements OnInit {
 
   ngOnInit() {
   }
+
+  nome: string= ' ';
+  tipo!: TipoTransacao;
+
+  listaCadastros: any[] = []
+
+  cadastrar(){
+    const novoCadastro: Cadastro = {
+      nome: this.nome,
+      tipo: this.tipo
+    };
+
+    this.listaCadastros.unshift(novoCadastro)
+  }
+
+
+  excluir(){}
+
 
 }

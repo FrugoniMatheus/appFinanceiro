@@ -5,9 +5,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Nome" placeholder="Digite o nome" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="tipo" label="Tipo">
+          <ion-select-option value="RECEBER">Receber</ion-select-option>
+          <ion-select-option value="PAGAR">Pagar</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="success">Cadastrar</ion-button>
+    <ion-button expand="block" color="danger">Limpar Formulário</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-list [(ngModel)]="lista">
+
+    </ion-list>
+  </ion-card>
+
 </ion-content>
