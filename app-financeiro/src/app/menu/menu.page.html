@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+
+    <ion-button expand="block" color="secondary" (click)="cadastro()">Cadastro</ion-button>
+    <ion-button expand="block" color="success" (click)="contasAReceber()">Contas a Receber</ion-button>
+    <ion-button expand="block" color="warning" (click)="contasAPagar()">Contas a Pagar</ion-button>
+
+  </ion-card>
+
 </ion-content>
