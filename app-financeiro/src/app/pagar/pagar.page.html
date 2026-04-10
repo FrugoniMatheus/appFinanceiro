@@ -5,9 +5,40 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pagar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Nome" placeholder="Digite o nome do cliente" [(ngModel)]="nomeCliente"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="date" label="Vencimento" placeholder="Digite a data do vencimento" [(ngModel)]="dataVencimento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="pagamento" label="Pagamento">
+          <ion-select-option value="CARTAO">CARTÃO</ion-select-option>
+          <ion-select-option value="DINHEIRO">DINHEIRO</ion-select-option>
+          <ion-select-option value="BOLETO">BOLETO</ion-select-option>
+          <ion-select-option value="PIX">PIX</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Valor" placeholder="Digite o valor" [(ngModel)]="valor"></ion-input>
+      </ion-item>
+    </ion-list>
+      <ion-button expand="block" color="success" (click)="cadastrarCliente()">Cadastrar</ion-button>
+    <ion-button expand="block" color="danger" (click)="limparFormularioCliente()">Limpar Formulário</ion-button>
+  </ion-card>
+    <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let item of listaCadastrosClientes; let i = index">
+        <ion-label>
+          <h2>{{ item.nomeFabricante }}</h2>
+          <p>{{ item.dataVencimento }}</p>
+          <p><strong>{{ item.pagamento }}</strong></p>
+          <p>{{ item.valor }}</p>
+        </ion-label>
+        <ion-icon slot="end" color="danger"  name="close-circle-outline" size="large" (click)="excluirCliente(i)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

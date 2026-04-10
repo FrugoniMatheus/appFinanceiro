@@ -6,8 +6,8 @@ export enum TipoPagamento {
 }
 
 
-export interface Fabricante{
-    nomeFabricante: string,
+export interface Cliente{
+    nomeCliente: string,
     dataVencimento: string,
     pagamento?: TipoPagamento,
     valor: number

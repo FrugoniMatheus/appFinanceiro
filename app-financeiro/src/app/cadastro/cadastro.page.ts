@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cadastro, TipoTransacao } from '../models/cadastro';
 
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -22,6 +23,7 @@ export class CadastroPage implements OnInit {
   listaCadastros: any[] = []
 
   cadastrar(){
+
     const novoCadastro: Cadastro = {
       nome: this.nome,
       endereco: this.endereco,
@@ -30,9 +32,6 @@ export class CadastroPage implements OnInit {
 
     this.listaCadastros.unshift(novoCadastro);
     this.limparFormulario();
-
-    
-
   }
 
   limparFormulario(){
