@@ -6,5 +6,6 @@ export enum TipoTransacao {
 
 export interface Cadastro {
     nome: String,
-    tipo : TipoTransacao;
+    endereco: String,
+    tipo?: TipoTransacao
 }

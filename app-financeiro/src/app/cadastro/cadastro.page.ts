@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cadastro, TipoTransacao } from '../models/cadastro';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -15,21 +16,34 @@ export class CadastroPage implements OnInit {
   }
 
   nome: string= ' ';
-  tipo!: TipoTransacao;
+  tipo: TipoTransacao | undefined;
+  endereco: string= ' ';
 
   listaCadastros: any[] = []
 
   cadastrar(){
     const novoCadastro: Cadastro = {
       nome: this.nome,
-      tipo: this.tipo
+      endereco: this.endereco,
+      tipo: this.tipo,
     };
 
-    this.listaCadastros.unshift(novoCadastro)
+    this.listaCadastros.unshift(novoCadastro);
+    this.limparFormulario();
+
+    
+
   }
 
+  limparFormulario(){
+    this.nome = ' ';
+    this.endereco = ' ';
+    this.tipo = undefined; 
+  }
 
-  excluir(){}
+  excluir(index: number) {
+    this.listaCadastros.splice(index, 1);
+  }
 
 
 }
