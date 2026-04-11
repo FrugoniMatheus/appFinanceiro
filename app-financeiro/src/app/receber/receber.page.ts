@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Fabricante, TipoPagamento } from '../models/fabricante';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-receber',
@@ -9,9 +10,13 @@ import { Fabricante, TipoPagamento } from '../models/fabricante';
 })
 export class ReceberPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+   voltar(){
+    this.router.navigate(['/menu'])
   }
 
   nomeFabricante: string = '';

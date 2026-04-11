@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cadastro, TipoTransacao } from '../models/cadastro';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,9 +11,13 @@ import { Cadastro, TipoTransacao } from '../models/cadastro';
 })
 export class CadastroPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  voltar(){
+    this.router.navigate(['/menu'])
   }
 
   nome: string= ' ';

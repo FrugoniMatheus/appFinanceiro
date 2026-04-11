@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente, TipoPagamento } from '../models/cliente';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagar',
@@ -9,9 +10,13 @@ import { Cliente, TipoPagamento } from '../models/cliente';
 })
 export class PagarPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  voltar(){
+    this.router.navigate(['/menu'])
   }
 
     nomeCliente: string = '';
